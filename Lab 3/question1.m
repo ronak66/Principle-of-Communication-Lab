@@ -10,6 +10,22 @@ function question1()
     [uc, tc] = contconv(p,bc,-t_length,-t_length,dt)
     bs = clock_signal(dt,t_length,-1)
     [us, ts] = contconv(p,bs,-t_length,-t_length,dt)
+
+    figure(10,"position",[0,0,1800,1000])
+    subplot(2,1,1)
+    stem(t,bc)
+    title('Plot of signal bc[n]')
+    xlabel('n')
+    ylabel('bc[n]')
+    grid on
+    subplot(2,1,2)
+    stem(t,bs)
+    title('Plot of signal bs[n]')
+    xlabel('n')
+    ylabel('bs[n]')
+    grid on
+    print( 'fig0.png', '-dpngcairo','-S1800,1000', '-color' )
+
     uc = transpose(uc)
     us = transpose(us)
     figure(1,"position",[0,0,1800,1000])
